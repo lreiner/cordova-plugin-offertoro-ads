@@ -25,7 +25,7 @@ public class AdGemAdsPlugin extends CordovaPlugin {
   private CallbackContext PUBLIC_CALLBACKS = null;
   private static final String TAG = "AdGemAdsPlugin";
   private CordovaWebView cWebView;
-  private AdGem adgem;
+  private AdGem adgemads;
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
     super.initialize(cordova, webView);
@@ -71,7 +71,7 @@ public class AdGemAdsPlugin extends CordovaPlugin {
   }
 
   public void initAdGem(CallbackContext callbackContext) {
-    adgem = AdGem.get();
+    adgemads = AdGem.get();
 
     AdGemCallback callback = new AdGemCallback() {
       @Override
@@ -122,20 +122,20 @@ public class AdGemAdsPlugin extends CordovaPlugin {
       }
     };
 
-    adGem.registerCallback(callback);
-    adGem.registerOfferWallCallback(offercallback);
+    adgemads.registerCallback(callback);
+    adgemads.registerOfferWallCallback(offercallback);
   }
 
   public void showInterstitial(CallbackContext callbackContext) { 
-    adGem.showInterstitialAd();
+    adgemads.showInterstitialAd();
 
   }
 
   public void showRewardVideo(CallbackContext callbackContext) { 
-    adGem.showRewardedAd();
+    adgemads.showRewardedAd();
   }
 
   public void showOfferWall(CallbackContext callbackContext) { 
-    adGem.showOfferWall();
+    adgemads.showOfferWall();
   }
 }
