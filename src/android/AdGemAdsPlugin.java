@@ -71,6 +71,8 @@ public class AdGemAdsPlugin extends CordovaPlugin {
 
   public void initAdGem(CallbackContext callbackContext) {
     AdGem adgemads = AdGem.get();
+    adgemads.registerCallback(callback);
+    adgemads.registerOfferWallCallback(callback);
 
     AdGemCallback callback = new AdGemCallback() {
       @Override
@@ -100,7 +102,7 @@ public class AdGemAdsPlugin extends CordovaPlugin {
       }
     };
 
-    OfferWallCallback offercallback = new OfferWallCallback() {
+    OfferWallCallback callback = new OfferWallCallback() {
       @Override
       public void onOfferWallStateChanged(int newState) {
         Log.d(TAG, "OfferWallStateChanged: " + newState);
@@ -120,9 +122,6 @@ public class AdGemAdsPlugin extends CordovaPlugin {
         cWebView.loadUrl("javascript:cordova.fireDocumentEvent('adgemads.offerwall.closed');");
       }
     };
-
-    adgemads.registerCallback(callback);
-    adgemads.registerOfferWallCallback(offercallback);
   }
 
   public void showInterstitial(CallbackContext callbackContext) { 
