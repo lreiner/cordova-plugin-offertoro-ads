@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="cordova-plugin-startapp-ads"
-    version="1.1.0">
+    id="cordova-plugin-adgem-ads"
+    version="1.0.0">
     <name>AdGem Ads</name>
     <description></description>
     <license>MIT</license>
