@@ -24,6 +24,15 @@
       <preference name="APP_ID_ANDROID" default="test" />
       <framework src="com.adgem:adgem-android:2.2.0" />
 
+      <config-file target="res/xml/adgem_config.xml" parent="/*">
+        <adgem-configuration 
+          applicationId="2163"
+          interstitialAdsEnabled="true"
+          rewardedAdsEnabled="true"
+          offerWallEnabled="true">
+        </adgem-configuration>
+      </config-file>
+
       <config-file target="AndroidManifest.xml" mode="merge" parent="/manifest/application">
         <meta-data 
           android:name="com.adgem.Config" 
@@ -38,15 +47,6 @@
       	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
       	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
       	<uses-permission android:name="android.permission.BLUETOOTH" />
-      </config-file>
-
-      <config-file target="res/xml/adgem_config.xml" parent="/*">
-        <adgem-configuration 
-          applicationId="2163"
-          interstitialAdsEnabled="true"
-          rewardedAdsEnabled="true"
-          offerWallEnabled="true">
-        </adgem-configuration>
       </config-file>
 
       <source-file src="src/android/AdGemAdsPlugin.java" target-dir="src/adgem/ads/" />
