@@ -31,6 +31,13 @@
           android:resource="@xml/adgem_config"/> 
       </config-file>
 
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="AdGemAdsPlugin">
+            <param name="android-package" value="com.adgem.cordova.ad.AdGemAdsPlugin"/>
+            <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
       <config-file target="AndroidManifest.xml" mode="merge" parent="/*">
         <uses-permission android:name="android.permission.INTERNET" />
       	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />

@@ -1,4 +1,4 @@
-package com.startapp.cordova.ad;
+package com.adgem.cordova.ad;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
