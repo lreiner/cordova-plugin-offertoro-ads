@@ -25,12 +25,6 @@
       <framework src="com.adgem:adgem-android:2.2.0" />
 
       <config-file target="AndroidManifest.xml" mode="merge" parent="/manifest/application">
-        <activity android:name=".AdGemActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
         <meta-data 
           android:name="com.adgem.Config" 
           android:resource="@xml/adgem_config"/> 
@@ -54,5 +48,7 @@
           offerWallEnabled="true">
         </adgem-configuration>
       </config-file>
+
+      <source-file src="src/android/AdGemAdsPlugin.java" target-dir="src/adgem/ads/" />
    </platform>
 </plugin>
