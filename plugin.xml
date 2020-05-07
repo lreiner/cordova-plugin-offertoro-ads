@@ -23,7 +23,7 @@
     <platform name="android">
       <framework src="com.adgem:adgem-android:2.2.0" />
       <source-file src="src/android/AdGemAdsPlugin.java" target-dir="src/adgem/ads/" />
-      <resource-file src="src/android/adgem_config.xml" target-dir="res/xml/" />
+      <resource-file src="src/android/adgem_config.xml" target="res/xml/adgem_config.xml" />
 
       <config-file target="AndroidManifest.xml" mode="merge" parent="/manifest/application">
         <meta-data 
