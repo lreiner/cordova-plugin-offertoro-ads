@@ -71,8 +71,6 @@ public class AdGemAdsPlugin extends CordovaPlugin {
 
   public void initAdGem(CallbackContext callbackContext) {
     AdGem adgemads = AdGem.get();
-    adgemads.registerCallback(callback);
-    adgemads.registerOfferWallCallback(callback);
 
     AdGemCallback callback = new AdGemCallback() {
       @Override
@@ -88,13 +86,6 @@ public class AdGemAdsPlugin extends CordovaPlugin {
       }
   
       @Override
-      public void onInterstitialAdComplete() {
-        // Notifies that the user has finished watching interstitial ad.
-        Log.d(TAG, "User finished watching interstitial ad!");
-        cWebView.loadUrl("javascript:cordova.fireDocumentEvent('adgemads.interstitial.finished');");
-      }
-  
-      @Override
       public void onRewardedAdComplete() {
         // Reward user for watching a rewarded video ad.
         Log.d(TAG, "User finished watching rewarded video ad!");
@@ -102,7 +93,7 @@ public class AdGemAdsPlugin extends CordovaPlugin {
       }
     };
 
-    OfferWallCallback callback = new OfferWallCallback() {
+    OfferWallCallback callbackOfferWall = new OfferWallCallback() {
       @Override
       public void onOfferWallStateChanged(int newState) {
         Log.d(TAG, "OfferWallStateChanged: " + newState);
@@ -122,6 +113,9 @@ public class AdGemAdsPlugin extends CordovaPlugin {
         cWebView.loadUrl("javascript:cordova.fireDocumentEvent('adgemads.offerwall.closed');");
       }
     };
+
+    adgemads.registerCallback(callback);
+    adgemads.registerOfferWallCallback(callbackOfferWall);
   }
 
   public void showInterstitial(CallbackContext callbackContext) { 
