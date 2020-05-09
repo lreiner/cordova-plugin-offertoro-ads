@@ -46,7 +46,7 @@ public class AdGemAdsPlugin extends CordovaPlugin {
     else if (action.equals("initUserID")) {
       cordova.getActivity().runOnUiThread(new Runnable() {
         public void run() {
-          String userID = args.optBoolean(0);
+          String userID = args.optString(0);
           initUserID(userID, PUBLIC_CALLBACKS);
         }
       });
