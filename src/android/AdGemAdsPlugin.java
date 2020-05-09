@@ -135,7 +135,7 @@ public class AdGemAdsPlugin extends CordovaPlugin {
     .id(userID)
     .build();
   
-    adgem.setPlayerMetaData(player);
+    adgemads.setPlayerMetaData(player);
   }
 
   public void showInterstitial(CallbackContext callbackContext) { 
