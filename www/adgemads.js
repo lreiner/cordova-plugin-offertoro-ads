@@ -5,6 +5,9 @@ var AdGemAds = {
 	initAdGem: function() {
 		exec(function(){}, function(){}, "AdGemAdsPlugin", "initAdGem", []);
 	},
+	initUserID: function(userID) {
+		exec(function(){}, function(){}, "AdGemAdsPlugin", "initUserID", [userID]);
+	},
 	showInterstitial: function() {
 		exec(function(){}, function(){}, "AdGemAdsPlugin", "showInterstitial", []);
 	},

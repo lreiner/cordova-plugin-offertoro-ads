@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import com.adgem.android.AdGem;
 import com.adgem.android.AdGemCallback;
 import com.adgem.android.OfferWallCallback;
+import com.adgem.android.PlayerMetadata;
 
 public class AdGemAdsPlugin extends CordovaPlugin {
 
@@ -41,7 +42,16 @@ public class AdGemAdsPlugin extends CordovaPlugin {
         }
       });
       return true;
-    } 
+    }  
+    else if (action.equals("initUserID")) {
+      cordova.getActivity().runOnUiThread(new Runnable() {
+        public void run() {
+          String userID = args.optBoolean(0);
+          initUserID(userID, PUBLIC_CALLBACKS);
+        }
+      });
+      return true;
+    }
     else if (action.equals("showInterstitial")) {
       cordova.getActivity().runOnUiThread(new Runnable() {
         public void run() {
@@ -118,10 +128,19 @@ public class AdGemAdsPlugin extends CordovaPlugin {
     adgemads.registerOfferWallCallback(callbackOfferWall);
   }
 
+  public void initUserID(String userID,CallbackContext callbackContext) { 
+    AdGem adgemads = AdGem.get();
+
+    PlayerMetadata player = new PlayerMetadata.Builder()
+    .id(userID)
+    .build();
+  
+    adgem.setPlayerMetaData(player);
+  }
+
   public void showInterstitial(CallbackContext callbackContext) { 
     AdGem adgemads = AdGem.get();
     adgemads.showInterstitialAd(cordova.getActivity());
-
   }
 
   public void showRewardVideo(CallbackContext callbackContext) { 
