@@ -21,6 +21,7 @@
     </engines>
 
     <platform name="android">
+      <resource-file src="src/android/OfferToroSdk-v4.2.2.aar" target="libs/OfferToroSdk-v4.2.2.aar" />
       <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
       <source-file src="src/android/OfferToroAdsPlugin.java" target-dir="src/offertoro/ads/" />
 
