@@ -2,7 +2,7 @@ var cordova = require('cordova');
 var exec = require('cordova/exec');
 
 var OfferToroAds = {
-	init: function() {
+	init: function(userID) {
 		exec(function(){}, function(){}, "OfferToroAdsPlugin", "initOfferToro", [userID]);
 	},
 	showOfferWall: function() {
