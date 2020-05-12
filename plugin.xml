@@ -26,10 +26,6 @@
       <framework src="com.android.support:appcompat-v7:+"/>
       <source-file src="src/android/OfferToroAdsPlugin.java" target-dir="src/offertoro/ads/" />
 
-      <config-file target="AndroidManifest.xml" mode="merge" parent="/manifest/application">
-        <application android:usesCleartextTraffic="true" />
-      </config-file>
-
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="OfferToroAdsPlugin">
             <param name="android-package" value="com.offertoro.cordova.ad.OfferToroAdsPlugin"/>
