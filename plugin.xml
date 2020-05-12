@@ -25,10 +25,6 @@
       <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
       <source-file src="src/android/OfferToroAdsPlugin.java" target-dir="src/offertoro/ads/" />
 
-      <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
-        <application android:usesCleartextTraffic="true" />
-      </edit-config>
-
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="OfferToroAdsPlugin">
             <param name="android-package" value="com.offertoro.cordova.ad.OfferToroAdsPlugin"/>
