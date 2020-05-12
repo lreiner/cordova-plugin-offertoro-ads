@@ -16,8 +16,8 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.offertoro.android.OTOfferWallSettings;
-import com.offertoro.android.OffersInit;
+import com.offertoro.sdk.OTOfferWallSettings;
+import com.offertoro.sdk.OffersInit;
 
 public class OfferToroAdsPlugin extends CordovaPlugin {
 
