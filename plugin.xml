@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="cordova-plugin-adgem-ads"
+    id="cordova-plugin-offertoro-ads"
     version="1.0.0">
-    <name>AdGem Ads</name>
+    <name>OfferToro Ads</name>
     <description></description>
     <license>MIT</license>
-    <keywords>adgem, ads, android, ios, plugin</keywords>
-    <repo>https://github.com/lreiner/cordova-plugin-adgem-ads.git</repo>
-    <issue>https://github.com/lreiner/cordova-plugin-adgem-ads/issues</issue>
+    <keywords>offertoro, ads, android, ios, plugin</keywords>
+    <repo>https://github.com/lreiner/cordova-plugin-offertoro-ads.git</repo>
+    <issue>https://github.com/lreiner/cordova-plugin-offertoro-ads/issues</issue>
 
-    <js-module src="www/adgemads.js" name="AdGemAds">
+    <js-module src="www/offertoroads.js" name="OfferToroAds">
       <runs/>
-      <clobbers target="AdGemAds" />
+      <clobbers target="OfferToroAds" />
     </js-module>
 
     <engines>
@@ -21,19 +21,16 @@
     </engines>
 
     <platform name="android">
-      <framework src="com.adgem:adgem-android:2.2.0" />
-      <source-file src="src/android/AdGemAdsPlugin.java" target-dir="src/adgem/ads/" />
-      <resource-file src="src/android/adgem_config.xml" target="res/xml/adgem_config.xml" />
+      <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+      <source-file src="src/android/OfferToroAdsPlugin.java" target-dir="src/offertoro/ads/" />
 
       <config-file target="AndroidManifest.xml" mode="merge" parent="/manifest/application">
-        <meta-data 
-          android:name="com.adgem.Config" 
-          android:resource="@xml/adgem_config"/> 
+        <application android:usesCleartextTraffic="true" />
       </config-file>
 
       <config-file target="res/xml/config.xml" parent="/*">
-        <feature name="AdGemAdsPlugin">
-            <param name="android-package" value="com.adgem.cordova.ad.AdGemAdsPlugin"/>
+        <feature name="OfferToroAdsPlugin">
+            <param name="android-package" value="com.offertoro.cordova.ad.OfferToroAdsPlugin"/>
             <param name="onload" value="true" />
         </feature>
       </config-file>

@@ -1,11 +1,11 @@
 {
-  "name": "cordova-plugin-startapp-ads",
+  "name": "cordova-plugin-offertoro-ads",
   "version": "1.1.0",
   "cordova": {
-    "id": "ccordova-plugin-startapp-ads",
+    "id": "ccordova-plugin-offertoro-ads",
     "platforms": [
       "android"
     ]
   },
-  "description": "A StartApp Ads Plugin"
+  "description": "A OfferToro Ads Plugin"
 }
