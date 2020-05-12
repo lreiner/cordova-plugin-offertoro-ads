@@ -1,8 +1,17 @@
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
+repositories{    
+  jcenter()
+  flatDir {
+      dirs 'src/main/libs'
+   }
 }
+
 dependencies {
     implementation(name: 'OfferToroSdk-v4.2.2', ext: 'aar')
+}
+
+android {
+  packagingOptions {
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+  }
 }
