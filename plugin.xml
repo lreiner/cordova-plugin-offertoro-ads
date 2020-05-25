@@ -19,12 +19,13 @@
         <engine name="cordova" version=">=7.0.0" />
         <engine name="cordova-android" version=">=6.0.0" />
     </engines>
+    
+    <dependency id="cordova-plugin-googleplayservices" />
 
     <platform name="android">
       <resource-file src="src/android/OfferToroSdk-v4.2.2.aar" target="libs/OfferToroSdk-v4.2.2.aar" />
       <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
       <framework src="com.android.support:appcompat-v7:+"/>
-      <framework src="com.google.android.gms:play-services-ads:9.6.1"/>
       <source-file src="src/android/OfferToroAdsPlugin.java" target-dir="src/offertoro/ads/" />
 
       <config-file target="res/xml/config.xml" parent="/*">
