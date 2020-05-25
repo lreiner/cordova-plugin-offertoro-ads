@@ -6,7 +6,6 @@ repositories{
 }
 
 dependencies {
-    implementation 'com.google.android.gms:play-services-ads:9.6.1'
     implementation(name: 'OfferToroSdk-v4.2.2', ext: 'aar')
 }
 
