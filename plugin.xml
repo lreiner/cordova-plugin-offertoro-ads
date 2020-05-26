@@ -24,6 +24,7 @@
       <resource-file src="src/android/OfferToroSdk-v4.2.2.aar" target="libs/OfferToroSdk-v4.2.2.aar" />
       <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
       <framework src="com.android.support:appcompat-v7:+"/>
+      <framework src="com.google.android.gms:play-services-ads:18.2.0"/>
       <source-file src="src/android/OfferToroAdsPlugin.java" target-dir="src/offertoro/ads/" />
 
       <config-file target="res/xml/config.xml" parent="/*">
@@ -32,7 +33,14 @@
             <param name="onload" value="true" />
         </feature>
       </config-file>
-
+      
+      <config-file target="AndroidManifest.xml" mode="merge" parent="/manifest/application">
+        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+      </config-file>
+        
       <config-file target="AndroidManifest.xml" mode="merge" parent="/*">
         <uses-permission android:name="android.permission.INTERNET" />
       	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
